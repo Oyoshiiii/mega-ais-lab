@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAddView.cs" />
+    <Compile Include="IChangeView.cs" />
+    <Compile Include="IConsoleView.cs" />
+    <Compile Include="IFindByOriginView.cs" />
+    <Compile Include="IGroupedByBodyPartsView.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="ISearchByIdView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProsthesisDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
