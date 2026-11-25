@@ -19,6 +19,12 @@ namespace BusinessLogic
         {
             Bind<IRepository<Prosthesis>>().To<EntityRepository<Prosthesis>>().InSingletonScope();
             //Bind<IRepository<Prosthesis>>().To<DapperRepository<Prosthesis>>().InSingletonScope();
+
+            Bind<DataLogic>().ToSelf().InSingletonScope();
+            Bind<QueryLogic>().ToSelf().InSingletonScope();
+            Bind<CRUDLogic>().ToSelf().InSingletonScope();
+
+            Bind<ILogic>().To<Logic>().InSingletonScope();
         }
     }
 }

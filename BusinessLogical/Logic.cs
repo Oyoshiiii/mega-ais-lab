@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class Logic
+    public class Logic : ILogic
     {
         DataLogic dataLogic;
         CRUDLogic crudLogic;
@@ -30,14 +30,14 @@ namespace BusinessLogic
         }
         
         /// <summary>
-        /// Добавление протеза в лист протезов
+        /// Добавление протеза в лист протезов; если null - ничего не происходит
         /// </summary>
         /// <param name="modelName">Модель протеза</param>
-        /// <param name="bodyPart">Часть тела на которую прикрепляется протез</param>
-        /// <param name="percentOfSanityLoss">% потери рассудка</param>
+        /// <param name="bodyPart">Часть тела на которую прикрепляется протез из списка частей тела</param>
+        /// <param name="percentOfSanityLoss">% потери рассудка, от 2 до 90</param>
         /// <param name="buffDescript">Описание баффов</param>
         /// <param name="debuffDescript">Описание дебаффов</param>
-        /// <param name="origin">Локация/место нахождения</param>
+        /// <param name="origin">Локация/место нахождения из списка локаций</param>
         public void AddProsthesis(string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
             crudLogic.AddProsthesis(modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
