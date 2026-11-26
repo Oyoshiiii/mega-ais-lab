@@ -13,7 +13,7 @@ namespace ViewWinForms
 {
     public partial class ChangeForm : Form, IChangeView
     {
-        public event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+        public event Action<ProsthesisEventArgs> SaveBtnClickEvent;
 
         public ChangeForm()
         {

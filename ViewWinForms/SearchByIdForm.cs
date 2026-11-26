@@ -13,7 +13,7 @@ namespace ViewWinForms
 {
     public partial class SearchByIdForm : Form, ISearchByIdView
     {
-        public event EventHandler<ProsthesisEventArgs> SearchBtnCLickEvent;
+        public event Action<ProsthesisEventArgs> SearchBtnCLickEvent;
 
         public SearchByIdForm()
         {
@@ -40,7 +40,7 @@ namespace ViewWinForms
                 return;
             }
 
-            SearchBtnCLickEvent?.Invoke(this, new ProsthesisEventArgs(id));
+            SearchBtnCLickEvent?.Invoke(new ProsthesisEventArgs(id));
         }
 
         public void ShowFoundProsthesis(ProsthesisDTO prosthesis)

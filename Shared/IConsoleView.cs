@@ -15,7 +15,7 @@ namespace Shared
         event Action<ProsthesisEventArgs> DeleteEvent;
 
         event Action GroupByAllBodyPartsEvent;
-        event Action FindByOriginEvent;
+        event Action<ProsthesisEventArgs> FindByOriginEvent;
 
         event Action SortPercentOfSanityLossEvent;
         event Action SortPercentOfSanityLossDescendingEvent;
@@ -26,5 +26,6 @@ namespace Shared
         void ShowProsthesis(ProsthesisDTO prosthesis);
 
         int GetSelectedIdProsthesis();
+        void ConsoleMain();
     }
 }

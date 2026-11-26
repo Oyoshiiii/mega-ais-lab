@@ -13,7 +13,7 @@ namespace ViewWinForms
 {
     public partial class FindByOriginForm : Form, IFindByOriginView
     {
-        public event EventHandler<ProsthesisEventArgs> SearchBtnClickEvent;
+        public event Action<ProsthesisEventArgs> SearchBtnClickEvent;
 
         public FindByOriginForm()
         {
@@ -42,7 +42,7 @@ namespace ViewWinForms
 
             if(!string.IsNullOrWhiteSpace(origin))
             {
-                SearchBtnClickEvent?.Invoke(this, new ProsthesisEventArgs(origin));
+                SearchBtnClickEvent?.Invoke(new ProsthesisEventArgs(origin));
             }
         }
 

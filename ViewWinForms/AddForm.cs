@@ -14,7 +14,7 @@ namespace ViewWinForms
 {
     public partial class AddForm : Form, IAddView
     {
-        public event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+        public event Action<ProsthesisEventArgs> SaveBtnClickEvent;
         public AddForm()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace ViewWinForms
             string Origin = CmbOrigin.SelectedItem.ToString();
 
             var prosthesisArgs = new ProsthesisEventArgs(ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
-            SaveBtnClickEvent?.Invoke(this, prosthesisArgs);
+            SaveBtnClickEvent?.Invoke(prosthesisArgs);
 
             MessageBox.Show("Протез добавлен");
         }

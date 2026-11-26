@@ -14,6 +14,7 @@ namespace ViewConsole
     {
         static void Main(string[] args)
         {
+            
             IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
             Logic logic = ninjectKernel.Get<Logic>();
 
@@ -88,6 +89,7 @@ namespace ViewConsole
 
             Console.WriteLine("\n\tВыход из консоли ->");
             Console.ReadKey();
+            
         }
 
         /// <summary>

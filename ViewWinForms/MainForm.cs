@@ -14,15 +14,15 @@ namespace ViewWinForms
 {
     public partial class MainForm : Form, IMainView
     {
-        public event EventHandler GetAllBtnClickEvent;
-        public event EventHandler GetByIdBtnClickEvent;
-        public event EventHandler AddBtnClickEvent;
-        public event EventHandler<ProsthesisEventArgs> ChangeBtnClickEvent;
-        public event EventHandler<ProsthesisEventArgs> DeleteBtnClickEvent;
-        public event EventHandler SortAscendingCheckedChangedEvent;
-        public event EventHandler SortDescendingCheckedChangedEvent;
-        public event EventHandler GroupByBodyPartClickEvent;
-        public event EventHandler FindBuOriginBtnClickEvent;
+        public event Action GetAllBtnClickEvent;
+        public event Action GetByIdBtnClickEvent;
+        public event Action AddBtnClickEvent;
+        public event Action<ProsthesisEventArgs> ChangeBtnClickEvent;
+        public event Action<ProsthesisEventArgs> DeleteBtnClickEvent;
+        public event Action SortAscendingCheckedChangedEvent;
+        public event Action SortDescendingCheckedChangedEvent;
+        public event Action GroupByBodyPartClickEvent;
+        public event Action FindBuOriginBtnClickEvent;
 
         public MainForm()
         {
@@ -31,17 +31,17 @@ namespace ViewWinForms
 
         private void GetAllBtn_Click(object sender, EventArgs e)
         {
-            GetAllBtnClickEvent?.Invoke(this, EventArgs.Empty);
+            GetAllBtnClickEvent?.Invoke();
         }
 
         private void GetByIDBtn_Click(object sender, EventArgs e)
         {
-            GetByIdBtnClickEvent?.Invoke(this, EventArgs.Empty);
+            GetByIdBtnClickEvent?.Invoke();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            AddBtnClickEvent?.Invoke(this, EventArgs.Empty);
+            AddBtnClickEvent?.Invoke();
         }
 
         private void ChangeBtn_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace ViewWinForms
 
             if (id != -1)
             {
-                ChangeBtnClickEvent?.Invoke(this, new ProsthesisEventArgs(id));
+                ChangeBtnClickEvent?.Invoke(new ProsthesisEventArgs(id));
             }
         }
 
@@ -60,28 +60,28 @@ namespace ViewWinForms
 
             if (id != -1)
             {
-                DeleteBtnClickEvent?.Invoke(this, new ProsthesisEventArgs(id));
+                DeleteBtnClickEvent?.Invoke(new ProsthesisEventArgs(id));
             }
         }
 
         private void ascending_CheckedChanged(object sender, EventArgs e)
         {
-            SortAscendingCheckedChangedEvent?.Invoke(this, EventArgs.Empty);
+            SortAscendingCheckedChangedEvent?.Invoke();
         }
 
         private void descending_CheckedChanged(object sender, EventArgs e)
         {
-            SortDescendingCheckedChangedEvent?.Invoke(this, EventArgs.Empty);
+            SortDescendingCheckedChangedEvent?.Invoke();
         }
 
         private void GroupByBodyPart_Click(object sender, EventArgs e)
         {
-            GroupByBodyPartClickEvent?.Invoke(this, EventArgs.Empty);
+            GroupByBodyPartClickEvent?.Invoke();
         }
 
         private void FindByOriginBtn_Click(object sender, EventArgs e)
         {
-            FindBuOriginBtnClickEvent?.Invoke(this, EventArgs.Empty);
+            FindBuOriginBtnClickEvent?.Invoke();
         }
 
         public void RedrawForm(List<ProsthesisDTO> prostheses)
