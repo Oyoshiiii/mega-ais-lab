@@ -16,6 +16,8 @@ namespace BusinessLogic
         CRUDLogic crudLogic;
         QueryLogic queryLogic;
 
+        public event Action<IEnumerable<Prosthesis>> DataChanged;
+
         /// <summary>
         /// Инициализация фасада бизнес-логики, объединяющего работу со справочными материалами, CRUD-операциями и сложными запросами
         /// </summary>
@@ -41,6 +43,7 @@ namespace BusinessLogic
         public void AddProsthesis(string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
             crudLogic.AddProsthesis(modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
+            DataChanged?.Invoke(crudLogic.GetAllProstheses());
         }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace BusinessLogic
         public void ChangeProsthesis(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescript, string debuffDescript, string origin)
         {
             crudLogic.ChangeProsthesis(id, modelName, bodyPart, percentOfSanityLoss, buffDescript, debuffDescript, origin);
+            DataChanged?.Invoke(crudLogic.GetAllProstheses());
         }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace BusinessLogic
         public void DeleteProsthesis(int id)
         {
             crudLogic.DeleteProsthesis(id);
+            DataChanged?.Invoke(crudLogic.GetAllProstheses());
         }
 
         /// <summary>

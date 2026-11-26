@@ -9,6 +9,12 @@ namespace BusinessLogic
 {
     public interface ILogic
     {
+        //дописать саммари
+        /// <summary>
+        /// 
+        /// </summary>
+        event Action<IEnumerable<Prosthesis>> DataChanged;
+
         /// <summary>
         /// Добавление протеза в лист протезов; если null - ничего не происходит
         /// </summary>
