@@ -15,5 +15,16 @@ namespace Shared
         string BuffDescription { get; }
         string DebuffDescription { get; }
         string Origin { get; }
+
+        public ProsthesisDTO(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescription, string debuffDescription, string origin)
+        {
+            Id = id;
+            ModelName = modelName;
+            BodyPart = bodyPart;
+            PercentOfSanityLoss = percentOfSanityLoss;
+            BuffDescription = buffDescription;
+            DebuffDescription = debuffDescription;
+            Origin = origin;
+        }
     }
 }

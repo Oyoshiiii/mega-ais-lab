@@ -56,5 +56,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogical\BusinessLogic.csproj">
+      <Project>{eea1c547-9606-435a-a231-823f1d537d04}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Entities.csproj">
+      <Project>{590abd0a-4a06-48ce-967e-235f88ca9160}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{e8d0b484-3ffb-4cc8-a246-f4cdcc8d89fd}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
