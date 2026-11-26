@@ -5,27 +5,10 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewConsole.csproj.CoreCompileInputs.cache
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.pdb
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Model.pdb
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\lab 1.exe.config
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\obj\Debug\ViewCons.26CF079E.Up2Date
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Data.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Data.pdb
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\DBProstheses.mdf
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\DBProstheses_log.ldf
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Interfaces.dll
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\EntityFramework.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Dapper.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Data.dll.config
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Interfaces.pdb
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\EntityFramework.xml
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Dapper.xml
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Microsoft.Web.Infrastructure.dll
@@ -49,6 +32,14 @@ C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.W
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.dll
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.pdb
-C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\BusinessLogic.dll.config
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Shared.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Shared.pdb
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Dapper.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Shared.dll.config
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Dapper.xml
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\kesha\Desktop\уник\2 курс\аис\lab 1\lab 1\bin\Debug\System.Threading.Tasks.Extensions.xml

@@ -1,7 +1,4 @@
-﻿using BusinessLogic;
-using Entities;
-using Ninject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -12,6 +9,8 @@ namespace ViewConsole
 {
     internal class Program
     {
+        static void Main(string[] args) { }
+        /*
         static void Main(string[] args)
         {
             
@@ -449,5 +448,6 @@ namespace ViewConsole
             List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
             GetAll(sortedProstheses);
         }
+        */
     }
 }

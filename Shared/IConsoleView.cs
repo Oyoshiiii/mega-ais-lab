@@ -22,7 +22,8 @@ namespace Shared
 
         void RedrawConsole(List<ProsthesisDTO> prostheses);
 
-        int ShowMainMenuGetMainMenuChoice();
+        int GetMainMenuChoice();
+        void ShowMainMenu();
         void ShowProsthesis(ProsthesisDTO prosthesis);
 
         int GetSelectedIdProsthesis();
