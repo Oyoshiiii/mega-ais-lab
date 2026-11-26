@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface IFindByOriginView
+    public interface IFindByOriginView : IView
     {
         /// <summary>
         /// событие при нажатии кнопки поиск протезов по локации
         /// </summary>
-        event EventHandler SearchBtnClickEvent;
+        event Action<ProsthesisEventArgs> SearchBtnClickEvent;
 
         /// <summary>
         /// метод загрузки листа с локациями протезов

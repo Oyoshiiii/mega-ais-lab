@@ -170,10 +170,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Presenter\Presenter.csproj">
-      <Project>{1dab0003-60d6-4094-85c7-8655007f150c}</Project>
-      <Name>Presenter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}</Project>
       <Name>Shared</Name>

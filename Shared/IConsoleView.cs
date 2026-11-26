@@ -8,17 +8,17 @@ namespace Shared
 {
     public interface IConsoleView
     {
-        event EventHandler<ProsthesisEventArgs> AddEvent;
-        event EventHandler GetAllEvent;
-        event EventHandler GetByIdEvent;
-        event EventHandler<ProsthesisEventArgs> ChangeEvent;
-        event EventHandler<ProsthesisEventArgs> DeleteEvent;
+        event Action<ProsthesisEventArgs> AddEvent;
+        event Action GetAllEvent;
+        event Action GetByIdEvent;
+        event Action<ProsthesisEventArgs> ChangeEvent;
+        event Action<ProsthesisEventArgs> DeleteEvent;
 
-        event EventHandler GroupByAllBodyPartsEvent;
-        event EventHandler FindByOriginEvent;
+        event Action GroupByAllBodyPartsEvent;
+        event Action FindByOriginEvent;
 
-        event EventHandler SortPercentOfSanityLossEvent;
-        event EventHandler SortPercentOfSanityLossDescendingEvent;
+        event Action SortPercentOfSanityLossEvent;
+        event Action SortPercentOfSanityLossDescendingEvent;
 
         void RedrawConsole(List<ProsthesisDTO> prostheses);
 

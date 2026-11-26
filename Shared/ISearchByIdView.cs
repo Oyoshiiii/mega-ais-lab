@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface ISearchByIdView
+    public interface ISearchByIdView : IView
     {
-        event EventHandler<ProsthesisEventArgs> SearchBtnCLickEvent;
+        event Action<ProsthesisEventArgs> SearchBtnCLickEvent;
 
         void ShowFoundProsthesis(ProsthesisDTO prosthesis);
         void ShowNotFoundProsthesis(string msg);

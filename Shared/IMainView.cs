@@ -11,41 +11,41 @@ namespace Shared
         /// <summary>
         /// Событие при нажатии кнопки получения всех протезов
         /// </summary>
-        event EventHandler GetAllBtnClickEvent;
+        event Action GetAllBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки получения протеза по ID
         /// </summary>
-        event EventHandler GetByIdBtnClickEvent;
+        event Action GetByIdBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки добавления протеза
         /// </summary>
-        event EventHandler AddBtnClickEvent;
+        event Action AddBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки изменения протеза
         /// </summary>
-        event EventHandler<ProsthesisEventArgs> ChangeBtnClickEvent;
+        event Action<ProsthesisEventArgs> ChangeBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки удаления протеза
         /// </summary>
-        event EventHandler<ProsthesisEventArgs> DeleteBtnClickEvent;
+        event Action<ProsthesisEventArgs> DeleteBtnClickEvent;
 
         /// <summary>
         /// событие при выборе радиобатона сортировки по возрастанию
         /// </summary>
-        event EventHandler SortAscendingCheckedChangedEvent;
+        event Action SortAscendingCheckedChangedEvent;
         /// <summary>
         /// событие при выборе радиобатона сортировки по убыванию 
         /// </summary>
-        event EventHandler SortDescendingCheckedChangedEvent;
+        event Action SortDescendingCheckedChangedEvent;
 
         /// <summary>
         /// событие при нажатии кнопки группировки протезов по частям тела
         /// </summary>
-        event EventHandler GroupByBodyPartClickEvent;
+        event Action GroupByBodyPartClickEvent;
         /// <summary>
         /// событие при нажатии кнопки поиска протезов по определенной локации
         /// </summary>
-        event EventHandler FindBuOriginBtnClickEvent;
+        event Action FindBuOriginBtnClickEvent;
 
         /// <summary>
         /// метод отрисовки формы с обновленными данными

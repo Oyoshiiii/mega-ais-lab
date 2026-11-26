@@ -14,14 +14,6 @@ namespace ViewWinForms
 {
     public partial class MainForm : Form, IMainView
     {
-        //IKernel ninjectKernel;
-        //Logic logic;
-
-        //List<Prosthesis> prostheses;
-
-        //List<string> bodyParts;
-        //List<string> originList;
-
         public event EventHandler GetAllBtnClickEvent;
         public event EventHandler GetByIdBtnClickEvent;
         public event EventHandler AddBtnClickEvent;
@@ -32,22 +24,6 @@ namespace ViewWinForms
         public event EventHandler GroupByBodyPartClickEvent;
         public event EventHandler FindBuOriginBtnClickEvent;
 
-        /*/// <summary>
-        /// Инициализация главной формы
-        /// </summary>
-        public MainForm()
-        {
-            InitializeComponent();
-
-            ninjectKernel = new StandardKernel(new SimpleConfigModule());
-            logic = ninjectKernel.Get<Logic>();
-
-            prostheses = logic.GetAllProstheses();
-
-            bodyParts = logic.GetBodyPartsList();
-            originList = logic.GetOriginList();
-        }*/
-
         public MainForm()
         {
             InitializeComponent();
@@ -55,75 +31,21 @@ namespace ViewWinForms
 
         private void GetAllBtn_Click(object sender, EventArgs e)
         {
-            //GetAllProstheses();
             GetAllBtnClickEvent?.Invoke(this, EventArgs.Empty);
         }
 
-        /*private void GetAllProstheses(List<Prosthesis> prostheses = null)
-        {
-            if (prostheses == null)
-            {
-                ascending.Checked = false;
-                descending.Checked = false;
-
-                prostheses = logic.GetAllProstheses();
-            }
-
-            prosthesesDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            prosthesesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-            prosthesesDataGridView.Rows.Clear();
-
-            foreach(Prosthesis prosthesis in prostheses)
-            {
-                prosthesesDataGridView.Rows.Add(
-                    prosthesis.Id,
-                    prosthesis.ModelName,
-                    prosthesis.BodyPart,
-                    prosthesis.PercentOfSanityLoss,
-                    prosthesis.BuffDescription,
-                    prosthesis.DebuffDescription,
-                    prosthesis.Origin
-                );
-            }
-        }*/
-
         private void GetByIDBtn_Click(object sender, EventArgs e)
         {
-            /*var searchByIdForm = new SearchByIdForm(logic);
-            searchByIdForm.ShowDialog();
-
-            GetAllProstheses();*/
-
             GetByIdBtnClickEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            /*var addForm = new AddForm(logic, bodyParts, originList);
-            addForm.ShowDialog();
-
-            GetAllProstheses();*/
-
             AddBtnClickEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void ChangeBtn_Click(object sender, EventArgs e)
         {
-            /*var prosthesis = GetSelectedProsthesis();
-
-            if (prosthesis == null)
-            {
-                MessageBox.Show("Выберите протез, который хотите изменить");
-                return;
-            }
-
-            var changeForm = new ChangeForm(prosthesis, logic, bodyParts, originList);
-            changeForm.ShowDialog();
-
-            GetAllProstheses();*/
-
-
             int id = GetSelectedProsthesisId();
 
             if (id != -1)
@@ -132,38 +54,8 @@ namespace ViewWinForms
             }
         }
 
-        /*private Prosthesis GetSelectedProsthesis()
-        {
-            if (prosthesesDataGridView.SelectedRows.Count == 0)
-                return null;
-
-            var row = prosthesesDataGridView.SelectedRows[0];
-
-            Prosthesis prosthesis = logic.GetProsthesisById(Convert.ToInt32(row.Cells["Id"].Value));
-
-            return prosthesis;
-        }*/
-
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            /*var prosthesis = GetSelectedProsthesis();
-
-            if (prosthesis == null)
-            {
-                MessageBox.Show("Выберите протез, который хотите удалить");
-                return;
-            }
-
-            DialogResult result = MessageBox.Show("Точно хотите удалить протез?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if(result == DialogResult.Yes)
-            {
-                logic.DeleteProsthesis(prosthesis.Id);
-                MessageBox.Show($"Протез ID: {prosthesis.Id} удален");
-            }
-
-            GetAllProstheses();*/
-
             int id = GetSelectedProsthesisId();
 
             if (id != -1)
@@ -174,43 +66,21 @@ namespace ViewWinForms
 
         private void ascending_CheckedChanged(object sender, EventArgs e)
         {
-            /*if (ascending.Checked)
-            {
-                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLoss();
-                GetAllProstheses(sortedProstheses);
-            }*/
-
             SortAscendingCheckedChangedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void descending_CheckedChanged(object sender, EventArgs e)
         {
-            /*if (descending.Checked)
-            {
-                List<Prosthesis> sortedProstheses = logic.SortByPercentOfSanityLossDescending();
-                GetAllProstheses(sortedProstheses);
-            }*/
-
             SortDescendingCheckedChangedEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void GroupByBodyPart_Click(object sender, EventArgs e)
         {
-            /*var groupedForm = new GroupedByBodyPartsForm(logic);
-            groupedForm.ShowDialog();
-
-            GetAllProstheses();*/
-
             GroupByBodyPartClickEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private void FindByOriginBtn_Click(object sender, EventArgs e)
         {
-            /*var findForm = new FindByOriginForm(logic);
-            findForm.ShowDialog();
-
-            GetAllProstheses();*/
-
             FindBuOriginBtnClickEvent?.Invoke(this, EventArgs.Empty);
         }
 
@@ -221,7 +91,7 @@ namespace ViewWinForms
             foreach (var pros in prostheses)
             {
                 prosthesesDataGridView.Rows.Add(pros.Id, pros.ModelName, pros.BodyPart, pros.PercentOfSanityLoss,
-                    pros.DebuffDescription, pros.BuffDescription, pros.Origin);
+                    pros.BuffDescription, pros.DebuffDescription, pros.Origin);
             }
         }
 

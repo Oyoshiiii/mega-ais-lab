@@ -13,34 +13,6 @@ namespace ViewWinForms
 {
     public partial class ChangeForm : Form, IChangeView
     {
-        /*Logic logic;
-        Prosthesis prosthesis;*/
-
-        /*/// <summary>
-        /// Инициализация формы изменения протеза
-        /// </summary>
-        /// <param name="prostheses">Лист протезов</param>
-        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
-        /// <param name="bodyParts">Лист частей тела</param>
-        /// <param name="originList">Лист локаций/мест нахождения</param>
-        public ChangeForm(Prosthesis prosthesis, Logic logic, List<string> bodyParts, List<string> originList)
-        {
-            InitializeComponent();
-            this.logic = logic;
-            this.prosthesis = prosthesis;
-
-            CmbBodyPart.DataSource = bodyParts;
-            CmbOrigin.DataSource = originList;
-
-            TxtID.Text = prosthesis.Id.ToString();
-            TxtModelName.Text = prosthesis.ModelName;
-            CmbBodyPart.SelectedItem = prosthesis.BodyPart;
-            NumPercentOfSanityLoss.Value = prosthesis.PercentOfSanityLoss;
-            TxtBuffDescript.Text = prosthesis.BuffDescription;
-            TxtDebuffDescript.Text = prosthesis.DebuffDescription;
-            CmbOrigin.SelectedItem = prosthesis.Origin;
-        }*/
-
         public event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
 
         public ChangeForm()
@@ -71,7 +43,7 @@ namespace ViewWinForms
 
         public void LoadOriginList(List<string> origin)
         {
-            CmbBodyPart.DataSource = origin;
+            CmbOrigin.DataSource = origin;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -102,10 +74,13 @@ namespace ViewWinForms
             string DebuffDescription = TxtDebuffDescript.Text.Trim();
             string Origin = CmbOrigin.SelectedItem.ToString();
 
-            //logic.ChangeProsthesis(prosthesis.Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
-
             var prosthesisArgs = new ProsthesisEventArgs(Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
             MessageBox.Show("Изменения сохранены");
+        }
+
+        public void ShowDialogView()
+        {
+            this.ShowDialog();
         }
     }
 }

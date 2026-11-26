@@ -19,14 +19,14 @@ namespace Presenter
             this.findByOriginView = findByOriginView;
             this.logic = logic;
 
-            findByOriginView.SearchBtnClickEvent += OnSearchBtnClickEvent;
+            findByOriginView.SearchBtnClickEvent += OnSearchBtnClickEvent; ;
 
             findByOriginView.LoadOriginList(logic.GetOriginList());
         }
 
-        private void OnSearchBtnClickEvent(object sender, EventArgs e)
+        private void OnSearchBtnClickEvent(ProsthesisEventArgs e)
         {
-            throw new NotImplementedException();
+            findByOriginView.RedrawForm(ConvertToDTOProsthesesList(logic.GroupBySpecificOrigin(e.Origin)));
         }
 
         private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)

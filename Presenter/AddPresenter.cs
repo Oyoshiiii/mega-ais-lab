@@ -25,24 +25,12 @@ namespace Presenter
             addView.LoadOriginList(logic.GetOriginList());
         }
 
-        private void OnSaveBtnClickEvent(object sender, ProsthesisEventArgs e)
+        private void OnSaveBtnClickEvent(ProsthesisEventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            logic.AddProsthesis(e.ModelName, e.BodyPart, e.PercentOfSanityLoss,
+                e.BuffDescription, e.DebuffDescription, e.Origin);
 
-        private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)
-        {
-            List<ProsthesisDTO> prosthesesDTO = prostheses.Select(prosthesis => new ProsthesisDTO(
-                prosthesis.Id,
-                prosthesis.ModelName,
-                prosthesis.BodyPart,
-                prosthesis.PercentOfSanityLoss,
-                prosthesis.DebuffDescription,
-                prosthesis.BuffDescription,
-                prosthesis.Origin
-            )).ToList();
-
-            return prosthesesDTO;
+            addView.CloseView();
         }
     }
 }

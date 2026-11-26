@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface IAddView
+    public interface IAddView : IView
     {
         /// <summary>
         /// событие при нажатии кнопки сохранения данных о добавляемом протезе
         /// </summary>
-        event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+        event Action<ProsthesisEventArgs> SaveBtnClickEvent;
 
         /// <summary>
         /// метод загрузки листа с частями тела протезов

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface IGroupedByBodyPartsView
+    public interface IGroupedByBodyPartsView : IView
     {
         /// <summary>
         /// метод отрисовки формы с обновленными данными

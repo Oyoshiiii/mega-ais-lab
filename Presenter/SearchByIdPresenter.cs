@@ -22,24 +22,19 @@ namespace Presenter
             searchByIdView.SearchBtnCLickEvent += OnSearchBtnCLickEvent;
         }
 
-        private void OnSearchBtnCLickEvent(object sender, ProsthesisEventArgs e)
+        private void OnSearchBtnCLickEvent(ProsthesisEventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            var prosthesis = logic.GetProsthesisById(e.Id);
+            if (prosthesis == null)
+            {
+                searchByIdView.ShowNotFoundProsthesis($"Протез с ID = {e.Id} не найден");
+                return;
+            }
 
-        private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)
-        {
-            List<ProsthesisDTO> prosthesesDTO = prostheses.Select(prosthesis => new ProsthesisDTO(
-                prosthesis.Id,
-                prosthesis.ModelName,
-                prosthesis.BodyPart,
-                prosthesis.PercentOfSanityLoss,
-                prosthesis.DebuffDescription,
-                prosthesis.BuffDescription,
-                prosthesis.Origin
-            )).ToList();
-
-            return prosthesesDTO;
+            var prosDto = new ProsthesisDTO(prosthesis.Id, prosthesis.ModelName, prosthesis.BodyPart,
+                prosthesis.PercentOfSanityLoss, prosthesis.BuffDescription, prosthesis.DebuffDescription, prosthesis.Origin);
+            
+            searchByIdView.ShowFoundProsthesis(prosDto);
         }
     }
 }

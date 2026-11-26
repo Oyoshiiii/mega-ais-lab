@@ -28,29 +28,30 @@ namespace Presenter
             logic.DataChanged += OnDataChanged;
         }
 
-        private void OnSortPercentOfSanityLossEvent(object sender, EventArgs e)
+        private void OnSortPercentOfSanityLossDescendingEvent()
         {
-            throw new NotImplementedException();
+            consoleView.RedrawConsole(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLossDescending()));
         }
 
-        private void OnSortPercentOfSanityLossDescendingEvent(object sender, EventArgs e)
+        private void OnSortPercentOfSanityLossEvent()
         {
-            throw new NotImplementedException();
+            consoleView.RedrawConsole(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLoss()));
         }
 
-        private void OnDeleteEvent(object sender, ProsthesisEventArgs e)
+        private void OnGetAllEvent()
         {
-            throw new NotImplementedException();
+            consoleView.RedrawConsole(ConvertToDTOProsthesesList(logic.GetAllProstheses()));
         }
 
-        private void OnGetAllEvent(object sender, EventArgs e)
+        private void OnDeleteEvent(ProsthesisEventArgs e)
         {
-            throw new NotImplementedException();
+            logic.DeleteProsthesis(e.Id);
         }
 
-        private void OnDataChanged(IEnumerable<Prosthesis> obj)
+
+        private void OnDataChanged(IEnumerable<Prosthesis> prostheses)
         {
-            throw new NotImplementedException();
+            consoleView.RedrawConsole(ConvertToDTOProsthesesList(prostheses.ToList()));
         }
 
         private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)

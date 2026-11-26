@@ -15,25 +15,6 @@ namespace ViewWinForms
     public partial class AddForm : Form, IAddView
     {
         public event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
-        //Logic logic;
-
-        /*
-        /// <summary>
-        /// Инициализация формы добавления протеза
-        /// </summary>
-        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
-        /// <param name="bodyParts">Лист частей тела</param>
-        /// <param name="originList">Лист локаций/мест нахождения</param>
-        public AddForm(Logic logic, List<string> bodyParts, List<string> originList)
-        {
-            InitializeComponent();
-            this.logic = logic;
-
-            CmbBodyPart.DataSource = bodyParts;
-            CmbOrigin.DataSource = originList;
-        }
-        */
-
         public AddForm()
         {
             InitializeComponent();
@@ -73,9 +54,7 @@ namespace ViewWinForms
             string DebuffDescription = TxtDebuffDescript.Text.Trim();
             string Origin = CmbOrigin.SelectedItem.ToString();
 
-            //logic.AddProsthesis(ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
-
-            var prosthesisArgs = new ProsthesisEventArgs(ModelName, BodyPart, PercentOfSanityLoss, DebuffDescription, BuffDescription, Origin);
+            var prosthesisArgs = new ProsthesisEventArgs(ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
             SaveBtnClickEvent?.Invoke(this, prosthesisArgs);
 
             MessageBox.Show("Протез добавлен");
@@ -89,6 +68,11 @@ namespace ViewWinForms
         public void LoadOriginList(List<string> origin)
         {
             CmbOrigin.DataSource = origin;
+        }
+
+        public void ShowDialogView()
+        {
+            this.ShowDialog();
         }
 
         public void CloseView()

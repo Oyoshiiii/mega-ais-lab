@@ -8,13 +8,13 @@ namespace Shared
 {
     public class ProsthesisEventArgs : EventArgs
     {
-        int Id { get; }
-        string ModelName { get; }
-        string BodyPart { get; }
-        int PercentOfSanityLoss { get; }
-        string BuffDescription { get; }
-        string DebuffDescription { get; }
-        string Origin { get; }
+        public int Id { get; }
+        public string ModelName { get; }
+        public string BodyPart { get; }
+        public int PercentOfSanityLoss { get; }
+        public string BuffDescription { get; }
+        public string DebuffDescription { get; }
+        public string Origin { get; }
 
         /// <summary>
         /// Конструктор для удаления или поиска по ID
@@ -34,7 +34,7 @@ namespace Shared
         /// <param name="debuffDescription">дебаффы добавляемого рпотеза</param>
         /// <param name="buffDescription">баффы добавляемого протеза</param>
         /// <param name="origin">локация добавляемого протеза</param>
-        public ProsthesisEventArgs(string name, string bodyPart, int percentOfSanityLoss, string debuffDescription, string buffDescription, string origin)
+        public ProsthesisEventArgs(string name, string bodyPart, int percentOfSanityLoss, string buffDescription, string debuffDescription, string origin)
         {
             ModelName = name;
             BodyPart = bodyPart;

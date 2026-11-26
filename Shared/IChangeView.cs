@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface IChangeView
+    public interface IChangeView : IView 
     {
         /// <summary>
         /// событие при нажатии кнопки сохранения изменений данных изменяемого протеза
         /// </summary>
-        event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+        event Action<ProsthesisEventArgs> SaveBtnClickEvent;
 
         /// <summary>
         /// метод загрузки данных изменяемого протеза

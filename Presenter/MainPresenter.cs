@@ -20,13 +20,7 @@ namespace Presenter
             this.logic = logic;
 
             mainView.GetAllBtnClickEvent += OnGetAllBtnClickEvent;
-            mainView.GetByIdBtnClickEvent += OnGetByIdBtnClickEvent;
-            mainView.AddBtnClickEvent += OnAddBtnClickEvent;
-            mainView.ChangeBtnClickEvent += OnChangeBtnClickEvent;
             mainView.DeleteBtnClickEvent += OnDeleteBtnClickEvent;
-
-            mainView.GroupByBodyPartClickEvent += OnGroupByBodyPartClickEvent;
-            mainView.FindBuOriginBtnClickEvent += OnFindBuOriginBtnClickEvent;
 
             mainView.SortAscendingCheckedChangedEvent += OnSortAscendingCheckedChangedEvent;
             mainView.SortDescendingCheckedChangedEvent += OnSortDescendingCheckedChangedEvent;
@@ -34,55 +28,31 @@ namespace Presenter
             logic.DataChanged += OnDataChanged;
         }
 
-        private void OnDataChanged(IEnumerable<Prosthesis> obj)
+        private void OnSortDescendingCheckedChangedEvent()
         {
-            throw new NotImplementedException();
+            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLossDescending()));
         }
 
-        private void OnSortDescendingCheckedChangedEvent(object sender, EventArgs e)
+        private void OnSortAscendingCheckedChangedEvent()
         {
-            throw new NotImplementedException();
+            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLoss()));
         }
 
-        private void OnSortAscendingCheckedChangedEvent(object sender, EventArgs e)
+        private void OnDeleteBtnClickEvent(ProsthesisEventArgs e)
         {
-            throw new NotImplementedException();
+            logic.DeleteProsthesis(e.Id);
         }
 
-        private void OnFindBuOriginBtnClickEvent(object sender, EventArgs e)
+        private void OnGetAllBtnClickEvent()
         {
-            throw new NotImplementedException();
+            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.GetAllProstheses()));
         }
 
-        private void OnGroupByBodyPartClickEvent(object sender, EventArgs e)
+        private void OnDataChanged(IEnumerable<Prosthesis> prostheses)
         {
-            throw new NotImplementedException();
+            mainView.RedrawForm(ConvertToDTOProsthesesList(prostheses.ToList()));
         }
 
-        private void OnDeleteBtnClickEvent(object sender, ProsthesisEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnChangeBtnClickEvent(object sender, ProsthesisEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnAddBtnClickEvent(object sender, ProsthesisEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnGetByIdBtnClickEvent(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnGetAllBtnClickEvent(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)
         {

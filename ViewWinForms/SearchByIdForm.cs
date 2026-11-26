@@ -15,17 +15,10 @@ namespace ViewWinForms
     {
         public event EventHandler<ProsthesisEventArgs> SearchBtnCLickEvent;
 
-        //Logic logic;
-
-        /*/// <summary>
-        /// Инициализация формы поиска протеза по ID
-        /// </summary>
-        /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
-        public SearchByIdForm(Logic logic)
+        public SearchByIdForm()
         {
             InitializeComponent();
-            this.logic = logic;
-        }*/
+        }
 
         private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -48,15 +41,6 @@ namespace ViewWinForms
             }
 
             SearchBtnCLickEvent?.Invoke(this, new ProsthesisEventArgs(id));
-
-            /*Prosthesis prosthesis = logic.GetProsthesisById(id);
-
-            if(prosthesis == null)
-            {
-                LblResult.Text = $"Протез с ID = {id} не найден.";
-                return;
-            }
-;           */
         }
 
         public void ShowFoundProsthesis(ProsthesisDTO prosthesis)
@@ -74,6 +58,11 @@ namespace ViewWinForms
         public void ShowNotFoundProsthesis(string msg)
         {
             LblResult.Text = msg;
+        }
+
+        public void ShowDialogView()
+        {
+            this.ShowDialog();
         }
     }
 }
