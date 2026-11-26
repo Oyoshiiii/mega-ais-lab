@@ -8,5 +8,21 @@ namespace Shared
 {
     public interface IFindByOriginView
     {
+        /// <summary>
+        /// событие при нажатии кнопки поиск протезов по локации
+        /// </summary>
+        event EventHandler SearchBtnClickEvent;
+
+        /// <summary>
+        /// метод загрузки листа с локациями протезов
+        /// </summary>
+        /// <param name="origin">лист локаций</param>
+        void LoadOriginList(List<string> origin);
+
+        /// <summary>
+        /// метод отрисовки формы с обновленными данными
+        /// </summary>
+        /// <param name="prostheses">лист протезов</param>
+        void RedrawForm(List<ProsthesisDTO> prostheses);
     }
 }

@@ -8,5 +8,30 @@ namespace Shared
 {
     public interface IChangeView
     {
+        /// <summary>
+        /// событие при нажатии кнопки сохранения изменений данных изменяемого протеза
+        /// </summary>
+        event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+
+        /// <summary>
+        /// метод загрузки данных изменяемого протеза
+        /// </summary>
+        /// <param name="prosthesis"></param>
+        void LoadChangedProsthesisData(ProsthesisDTO prosthesis);
+        /// <summary>
+        /// метод загрузки листа с частями тела протезов
+        /// </summary>
+        /// <param name="bodyParts">лист частей тела</param>
+        void LoadBodyPartsList(List<string> bodyParts);
+        /// <summary>
+        /// метод загрузки листа с локациями протезов
+        /// </summary>
+        /// <param name="origin">лист локаций</param>
+        void LoadOriginList(List<string> origin);
+
+        /// <summary>
+        /// метод закрытия формы
+        /// </summary>
+        void CloseView();
     }
 }

@@ -8,5 +8,9 @@ namespace Shared
 {
     public interface ISearchByIdView
     {
+        event EventHandler<ProsthesisEventArgs> SearchBtnCLickEvent;
+
+        void ShowFoundProsthesis(ProsthesisDTO prosthesis);
+        void ShowNotFoundProsthesis(string msg);
     }
 }

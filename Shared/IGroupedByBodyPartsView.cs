@@ -8,5 +8,10 @@ namespace Shared
 {
     public interface IGroupedByBodyPartsView
     {
+        /// <summary>
+        /// метод отрисовки формы с обновленными данными
+        /// </summary>
+        /// <param name="prostheses">лист протезов</param>
+        void RedrawForm(List<ProsthesisDTO> prostheses);
     }
 }
