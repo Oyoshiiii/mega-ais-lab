@@ -1,5 +1,4 @@
-﻿using BusinessLogic;
-using Entities;
+﻿using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +11,14 @@ using System.Windows.Forms;
 
 namespace ViewWinForms
 {
-    public partial class FindByOriginForm : Form
+    public partial class FindByOriginForm : Form, IFindByOriginView
     {
-        Logic logic;
-        List<Prosthesis> prostheses = new List<Prosthesis>();
+        public event EventHandler SearchBtnClickEvent;
 
-        /// <summary>
+        /*Logic logic;
+        List<Prosthesis> prostheses = new List<Prosthesis>();*/
+
+        /*/// <summary>
         /// Инициализация формы поиска протезов по локации/месту нахождения
         /// </summary>
         /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
@@ -26,17 +27,45 @@ namespace ViewWinForms
             InitializeComponent();
             this.logic = logic;
             CmbOrigin.DataSource = logic.GetOriginList();
+        }*/
+
+        public FindByOriginForm()
+        {
+            InitializeComponent();
+        }
+
+        public void LoadOriginList(List<string> origin)
+        {
+            CmbOrigin.DataSource = origin;
+        }
+
+        public void RedrawForm(List<ProsthesisDTO> prostheses)
+        {
+            prosthesesDataGridView.Rows.Clear();
+
+            foreach(var pros in prostheses)
+            {
+                prosthesesDataGridView.Rows.Add(pros.Id, pros.ModelName, pros.BodyPart, pros.PercentOfSanityLoss,
+                    pros.DebuffDescription, pros.BuffDescription, pros.Origin);
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            prostheses = logic.GroupBySpecificOrigin(CmbOrigin.Text);
-            GetBySpecificOriginProstheses();
+            //prostheses = logic.GroupBySpecificOrigin(CmbOrigin.Text);
+            //GetBySpecificOriginProstheses();
 
-            if(prostheses.Count == 0) MessageBox.Show("В этой локации нет протезов");
+            //if(prostheses.Count == 0) MessageBox.Show("В этой локации нет протезов");
+
+            string origin = CmbOrigin.SelectedItem?.ToString();
+
+            if(origin != null && origin != "")
+            {
+                SearchBtnClickEvent?.Invoke(this, new ProsthesisEventArgs(origin));
+            }
         }
 
-        private void GetBySpecificOriginProstheses()
+        /*private void GetBySpecificOriginProstheses()
         {
             prosthesesDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             prosthesesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -55,6 +84,6 @@ namespace ViewWinForms
                     prosthesis.Origin
                 );
             }
-        }
+        }*/
     }
 }

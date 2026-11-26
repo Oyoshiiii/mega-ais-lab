@@ -19,7 +19,7 @@ namespace Shared
         /// <summary>
         /// событие при нажатии кнопки добавления протеза
         /// </summary>
-        event EventHandler<ProsthesisEventArgs> AddBtnClickEvent;
+        event EventHandler AddBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки изменения протеза
         /// </summary>

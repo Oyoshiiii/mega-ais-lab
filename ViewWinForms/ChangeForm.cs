@@ -1,5 +1,4 @@
-﻿using BusinessLogic;
-using Entities;
+﻿using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +11,12 @@ using System.Windows.Forms;
 
 namespace ViewWinForms
 {
-    public partial class ChangeForm : Form
+    public partial class ChangeForm : Form, IChangeView
     {
-        Logic logic;
-        Prosthesis prosthesis;
+        /*Logic logic;
+        Prosthesis prosthesis;*/
 
-        /// <summary>
+        /*/// <summary>
         /// Инициализация формы изменения протеза
         /// </summary>
         /// <param name="prostheses">Лист протезов</param>
@@ -40,6 +39,39 @@ namespace ViewWinForms
             TxtBuffDescript.Text = prosthesis.BuffDescription;
             TxtDebuffDescript.Text = prosthesis.DebuffDescription;
             CmbOrigin.SelectedItem = prosthesis.Origin;
+        }*/
+
+        public event EventHandler<ProsthesisEventArgs> SaveBtnClickEvent;
+
+        public ChangeForm()
+        {
+            InitializeComponent();
+        }
+
+        public void CloseView()
+        {
+            this.Close();
+        }
+
+        public void LoadBodyPartsList(List<string> bodyParts)
+        {
+            CmbBodyPart.DataSource = bodyParts;
+        }
+
+        public void LoadChangedProsthesisData(ProsthesisDTO prosthesis)
+        {
+            TxtID.Text = prosthesis.Id.ToString();
+            TxtModelName.Text = prosthesis.ModelName;
+            CmbBodyPart.SelectedItem = prosthesis.BodyPart;
+            NumPercentOfSanityLoss.Value = prosthesis.PercentOfSanityLoss;
+            TxtBuffDescript.Text = prosthesis.BuffDescription;
+            TxtDebuffDescript.Text = prosthesis.DebuffDescription;
+            CmbOrigin.SelectedItem = prosthesis.Origin;
+        }
+
+        public void LoadOriginList(List<string> origin)
+        {
+            CmbBodyPart.DataSource = origin;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -62,6 +94,7 @@ namespace ViewWinForms
                 return;
             }
 
+            int Id = Convert.ToInt32(TxtID.Text);
             string ModelName = TxtModelName.Text.Trim();
             string BodyPart = CmbBodyPart.SelectedItem.ToString();
             int PercentOfSanityLoss = (int)NumPercentOfSanityLoss.Value;
@@ -69,10 +102,10 @@ namespace ViewWinForms
             string DebuffDescription = TxtDebuffDescript.Text.Trim();
             string Origin = CmbOrigin.SelectedItem.ToString();
 
-            logic.ChangeProsthesis(prosthesis.Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
-            MessageBox.Show("Изменения сохранены");
+            //logic.ChangeProsthesis(prosthesis.Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
 
-            this.Close();
+            var prosthesisArgs = new ProsthesisEventArgs(Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
+            MessageBox.Show("Изменения сохранены");
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using BusinessLogic;
-using Entities;
+﻿using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +11,13 @@ using System.Windows.Forms;
 
 namespace ViewWinForms
 {
-    public partial class SearchByIdForm : Form
+    public partial class SearchByIdForm : Form, ISearchByIdView
     {
-        Logic logic;
+        public event EventHandler<ProsthesisEventArgs> SearchBtnCLickEvent;
 
-        /// <summary>
+        //Logic logic;
+
+        /*/// <summary>
         /// Инициализация формы поиска протеза по ID
         /// </summary>
         /// <param name="logic">Экземпляр класса бизнес-логики <see cref="Logic"/></param>
@@ -24,7 +25,7 @@ namespace ViewWinForms
         {
             InitializeComponent();
             this.logic = logic;
-        }
+        }*/
 
         private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -46,14 +47,20 @@ namespace ViewWinForms
                 return;
             }
 
-            Prosthesis prosthesis = logic.GetProsthesisById(id);
+            SearchBtnCLickEvent?.Invoke(this, new ProsthesisEventArgs(id));
+
+            /*Prosthesis prosthesis = logic.GetProsthesisById(id);
 
             if(prosthesis == null)
             {
                 LblResult.Text = $"Протез с ID = {id} не найден.";
                 return;
             }
+;           */
+        }
 
+        public void ShowFoundProsthesis(ProsthesisDTO prosthesis)
+        {
             LblResult.Text =
                 $"ID: {prosthesis.Id}\r\n" +
                 $"Модель: {prosthesis.ModelName}\r\n" +
@@ -62,6 +69,11 @@ namespace ViewWinForms
                 $"Баффы: {prosthesis.BuffDescription}\r\n" +
                 $"Дебаффы: {prosthesis.DebuffDescription}\r\n" +
                 $"Локация/место нахождения: {prosthesis.Origin}";
+        }
+
+        public void ShowNotFoundProsthesis(string msg)
+        {
+            LblResult.Text = msg;
         }
     }
 }

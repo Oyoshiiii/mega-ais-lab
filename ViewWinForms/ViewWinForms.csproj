@@ -170,13 +170,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogical\BusinessLogic.csproj">
-      <Project>{eea1c547-9606-435a-a231-823f1d537d04}</Project>
-      <Name>BusinessLogic</Name>
+    <ProjectReference Include="..\Presenter\Presenter.csproj">
+      <Project>{1dab0003-60d6-4094-85c7-8655007f150c}</Project>
+      <Name>Presenter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Entities.csproj">
-      <Project>{590abd0a-4a06-48ce-967e-235f88ca9160}</Project>
-      <Name>Entities</Name>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}</Project>
+      <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
