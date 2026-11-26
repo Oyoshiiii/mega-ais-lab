@@ -20,6 +20,13 @@ namespace Presenter
             this.logic = logic;
 
             groupedByBodyPartsView.RedrawForm(ConvertToDTOProsthesesList(logic.GroupByAllBodyParts()));
+
+            logic.DataChanged += OnDataChanged;
+        }
+
+        private void OnDataChanged(IEnumerable<Prosthesis> prostheses)
+        {
+            groupedByBodyPartsView.RedrawForm(ConvertToDTOProsthesesList(logic.GroupByAllBodyParts()));
         }
 
         private List<ProsthesisDTO> ConvertToDTOProsthesesList(List<Prosthesis> prostheses)

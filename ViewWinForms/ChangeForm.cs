@@ -75,6 +75,8 @@ namespace ViewWinForms
             string Origin = CmbOrigin.SelectedItem.ToString();
 
             var prosthesisArgs = new ProsthesisEventArgs(Id, ModelName, BodyPart, PercentOfSanityLoss, BuffDescription, DebuffDescription, Origin);
+            SaveBtnClickEvent?.Invoke(prosthesisArgs);
+
             MessageBox.Show("Изменения сохранены");
         }
 

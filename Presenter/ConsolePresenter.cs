@@ -32,6 +32,9 @@ namespace Presenter
             consoleView.SortPercentOfSanityLossDescendingEvent += OnSortPercentOfSanityLossDescendingEvent;
 
             logic.DataChanged += OnDataChanged;
+
+            consoleView.LoadBodyPartsList(logic.GetBodyPartsList());
+            consoleView.LoadOriginList(logic.GetOriginList());
         }
 
         private void OnGroupByAllBodyPartsEvent()

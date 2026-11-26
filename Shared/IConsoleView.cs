@@ -23,10 +23,15 @@ namespace Shared
         void RedrawConsole(List<ProsthesisDTO> prostheses);
 
         int GetMainMenuChoice();
+        int GetSelectedIdProsthesis();
+
+        void ShowMsg(string msg);
         void ShowMainMenu();
         void ShowProsthesis(ProsthesisDTO prosthesis);
 
-        int GetSelectedIdProsthesis();
         void ConsoleMain();
+
+        void LoadBodyPartsList(List<string> bodyParts);
+        void LoadOriginList(List<string> origin);
     }
 }

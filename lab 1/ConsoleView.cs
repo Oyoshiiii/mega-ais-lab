@@ -9,6 +9,9 @@ namespace lab_1
 {
     public class ConsoleView : IConsoleView
     {
+        List<string> bodyParts = new List<string>();
+        List<string> origin = new List<string>();
+
         public event Action<ProsthesisEventArgs> AddEvent;
         public event Action GetAllEvent;
         public event Action GetByIdEvent;
@@ -40,34 +43,44 @@ namespace lab_1
                         break;
 
                     case 3:
-                        var addArgs = CollectProsthesisDataForAdd();
+                        var addArgs = ProsthesisDataForAdd();
 
                         if (addArgs != null)
                         {
                             AddEvent?.Invoke(addArgs);
                         }
+
+                        ShowMsg("\tПротез добавлен");
                         break;
 
                     case 4:
+                        GetAllEvent?.Invoke();
+
                         int idChange = GetSelectedIdProsthesis();
 
                         if (idChange != -1)
                         {
-                            var changeArgs = CollectProsthesisDataForChange(idChange);
+                            var changeArgs = ProsthesisDataForChange(idChange);
                             if (changeArgs != null)
                             {
                                 ChangeEvent?.Invoke(changeArgs);
                             }
                         }
+
+                        ShowMsg("\tИзменения сохранены");
                         break;
 
                     case 5:
+                        GetAllEvent?.Invoke();
+
                         int idDelete = GetSelectedIdProsthesis();
 
                         if (idDelete != -1)
                         {
                             DeleteEvent?.Invoke(new ProsthesisEventArgs(idDelete));
                         }
+
+                        ShowMsg("\tПротез удален");
                         break;
 
                     case 6:
@@ -75,9 +88,7 @@ namespace lab_1
                         break;
 
                     case 7:
-                        Console.Write("Введите локацию: ");
-                        string origin = Console.ReadLine();
-
+                        string origin = ChooseOriginFromList();
                         FindByOriginEvent?.Invoke(new ProsthesisEventArgs(origin));
                         break;
 
@@ -164,48 +175,78 @@ namespace lab_1
             return id;
         }
 
-        private ProsthesisEventArgs CollectProsthesisDataForAdd()
+        private ProsthesisEventArgs ProsthesisDataForAdd()
         {
             Console.Write("Введите название модели: ");
             string modelName = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(modelName)) 
+            { 
+                ShowMsg("Название модели не может быть пустым"); 
+                return null; 
+            }
 
             Console.Write("Введите % потери рассудка от применения протеза (от 2 до 90): ");
             int percent = FullValidationCheck("\n\t\t% потери рассудка вне диапазона, попробуйте снова\n", 2, 90);
 
             Console.Write("Введите описание баффов: ");
             string buff = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(buff)) 
+            { 
+                ShowMsg("Описание баффов не может быть пустым"); 
+                return null; 
+            }
 
             Console.Write("Введите описание дебаффов: ");
             string debuff = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(debuff)) 
+            { 
+                ShowMsg("Описание дебаффов не может быть пустым"); 
+                return null; 
+            }
 
-            Console.Write("Введите локацию/место нахождения: ");
-            string origin = Console.ReadLine();
+            string bodyPart = ChooseBodyPartFromList();
+            if (bodyPart == null) return null;
 
-            Console.Write("Введите часть тела: ");
-            string bodyPart = Console.ReadLine();
+            string origin = ChooseOriginFromList();
+            if (origin == null) return null;
 
             return new ProsthesisEventArgs(modelName, bodyPart, percent, buff, debuff, origin);
         }
 
-        private ProsthesisEventArgs CollectProsthesisDataForChange(int id)
+        private ProsthesisEventArgs ProsthesisDataForChange(int id)
         {
             Console.Write("Введите название модели: ");
             string modelName = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(modelName)) 
+            { 
+                ShowMsg("Название модели не может быть пустым"); 
+                return null; 
+            }
 
             Console.Write("Введите % потери рассудка (от 2 до 90): ");
             int percent = FullValidationCheck("\n\t\t% потери рассудка вне диапазона, попробуйте снова\n", 2, 90);
 
             Console.Write("Введите описание баффов: ");
             string buff = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(buff)) 
+            { 
+                ShowMsg("Описание баффов не может быть пустым"); 
+                return null;
+            }
 
             Console.Write("Введите описание дебаффов: ");
             string debuff = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(debuff)) 
+            { 
+                ShowMsg("Описание дебаффов не может быть пустым"); 
+                return null; 
+            }
 
-            Console.Write("Введите локацию/место нахождения: ");
-            string origin = Console.ReadLine();
+            string bodyPart = ChooseBodyPartFromList();
+            if (bodyPart == null) return null;
 
-            Console.Write("Введите часть тела: ");
-            string bodyPart = Console.ReadLine();
+            string origin = ChooseOriginFromList();
+            if (origin == null) return null;
 
             return new ProsthesisEventArgs(id, modelName, bodyPart, percent, buff, debuff, origin);
         }
@@ -230,6 +271,79 @@ namespace lab_1
                 valid = true;
             }
             return result;
+        }
+
+        public void LoadBodyPartsList(List<string> bodyParts)
+        {
+            this.bodyParts = bodyParts;
+        }
+
+        public void LoadOriginList(List<string> origin)
+        {
+            this.origin = origin;
+        }
+
+        public void ShowMsg(string msg)
+        {
+            Console.WriteLine("\n" + msg);
+        }
+
+        private string ChooseBodyPartFromList()
+        {
+            if (bodyParts == null || bodyParts.Count == 0)
+            {
+                ShowMsg("\tСписок частей тела пуст");
+                return null;
+            }
+
+            Console.WriteLine("\nВыберите часть тела, на которую крепится протез или которую он заменяет:");
+            for (int i = 0; i < bodyParts.Count; i++)
+            {
+                Console.WriteLine($"[{i + 1}.] {bodyParts[i]}");
+            }
+            Console.Write("Ввод: ");
+
+            string input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input)) return null;
+
+            int choice;
+            while (!int.TryParse(input, out choice) || choice < 1 || choice > bodyParts.Count)
+            {
+                Console.Write("\n\t\t!! Такого варианта ответа нет, попробуйте снова\nВвод: ");
+                input = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(input)) return null;
+            }
+
+            return bodyParts[choice - 1];
+        }
+
+        private string ChooseOriginFromList()
+        {
+            if (origin == null || origin.Count == 0)
+            {
+                ShowMsg("\tСписок локаций пуст");
+                return null;
+            }
+
+            Console.WriteLine("\nВыберите локацию/место нахождения протеза:");
+            for (int i = 0; i < origin.Count; i++)
+            {
+                Console.WriteLine($"[{i + 1}.] {origin[i]}");
+            }
+            Console.Write("Ввод: ");
+
+            string input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input)) return null;
+
+            int choice;
+            while (!int.TryParse(input, out choice) || choice < 1 || choice > origin.Count)
+            {
+                Console.Write("\n\t\t!! Такого варианта ответа нет, попробуйте снова\nВвод: ");
+                input = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(input)) return null;
+            }
+
+            return origin[choice - 1];
         }
     }
 }
