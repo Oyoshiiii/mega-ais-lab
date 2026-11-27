@@ -8,6 +8,9 @@ namespace Shared
 {
     public interface IView
     {
+        /// <summary>
+        /// открытие формы-представления
+        /// </summary>
         void ShowDialogView();
     }
 }

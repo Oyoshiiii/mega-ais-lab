@@ -13,18 +13,32 @@ namespace ViewWinForms
 {
     public partial class FindByOriginForm : Form, IFindByOriginView
     {
+        /// <summary>
+        /// событие при нажатии кнопки поиска протезов по локации
+        /// </summary>
         public event Action<ProsthesisEventArgs> SearchBtnClickEvent;
 
+        /// <summary>
+        /// конструктор формы поиска по локации
+        /// </summary>
         public FindByOriginForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// метод загрузки листа с локациями протезов
+        /// </summary>
+        /// <param name="origin">лист локаций</param>
         public void LoadOriginList(List<string> origin)
         {
             CmbOrigin.DataSource = origin;
         }
 
+        /// <summary>
+        /// метод перерисовки таблицы с найденными протезами
+        /// </summary>
+        /// <param name="prostheses">лист DTO протезов для отображения</param>
         public void RedrawForm(List<ProsthesisDTO> prostheses)
         {
             prosthesesDataGridView.Rows.Clear();
@@ -36,6 +50,7 @@ namespace ViewWinForms
             }
         }
 
+
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             string origin = CmbOrigin.SelectedItem?.ToString();
@@ -46,6 +61,9 @@ namespace ViewWinForms
             }
         }
 
+        /// <summary>
+        /// метод открытия формы
+        /// </summary>
         public void ShowDialogView()
         {
             this.ShowDialog();

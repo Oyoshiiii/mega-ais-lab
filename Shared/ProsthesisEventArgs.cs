@@ -17,7 +17,7 @@ namespace Shared
         public string Origin { get; }
 
         /// <summary>
-        /// Конструктор для удаления или поиска по ID
+        /// Конструктор для удаления или передачи по ID
         /// </summary>
         /// <param name="id">ID уадаляемого протеза или искомого по ID</param>
         public ProsthesisEventArgs(int id)

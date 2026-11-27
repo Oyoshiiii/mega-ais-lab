@@ -9,9 +9,9 @@ namespace BusinessLogic
 {
     public interface ILogic
     {
-        //дописать саммари
+
         /// <summary>
-        /// 
+        /// событие при изменении данных
         /// </summary>
         event Action<IEnumerable<Prosthesis>> DataChanged;
 

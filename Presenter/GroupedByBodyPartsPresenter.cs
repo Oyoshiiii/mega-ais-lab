@@ -14,6 +14,11 @@ namespace Presenter
         IGroupedByBodyPartsView groupedByBodyPartsView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор презентера группировки по частям тела
+        /// </summary>
+        /// <param name="groupedByBodyPartsView">представление группировки по частям тела</param>
+        /// <param name="logic">бизнес-логика</param>
         public GroupedByBodyPartsPresenter(IGroupedByBodyPartsView groupedByBodyPartsView, ILogic logic)
         {
             this.groupedByBodyPartsView = groupedByBodyPartsView;

@@ -14,7 +14,14 @@ namespace ViewWinForms
 {
     public partial class AddForm : Form, IAddView
     {
+        /// <summary>
+        /// событие при нажатии кнопки сохранения данных о добавляемом протезе
+        /// </summary>
         public event Action<ProsthesisEventArgs> SaveBtnClickEvent;
+
+        /// <summary>
+        /// конструктор формы добавления протеза
+        /// </summary>
         public AddForm()
         {
             InitializeComponent();
@@ -60,21 +67,35 @@ namespace ViewWinForms
             MessageBox.Show("Протез добавлен");
         }
 
+        /// <summary>
+        /// метод загрузки листа с частями тела протезов
+        /// </summary>
+        /// <param name="bodyParts">лист частей тела</param>
         public void LoadBodyPartsList(List<string> bodyParts)
         {
             CmbBodyPart.DataSource = bodyParts;
         }
 
+        /// <summary>
+        /// метод загрузки листа с локациями протезов
+        /// </summary>
+        /// <param name="origin">лист локаций</param>
         public void LoadOriginList(List<string> origin)
         {
             CmbOrigin.DataSource = origin;
         }
 
+        /// <summary>
+        /// метод открытия формы
+        /// </summary>
         public void ShowDialogView()
         {
             this.ShowDialog();
         }
 
+        /// <summary>
+        /// метод закрытия формы
+        /// </summary>
         public void CloseView()
         {
             this.Close();

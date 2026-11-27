@@ -13,7 +13,12 @@ namespace Presenter
     {
         IConsoleView consoleView;
         ILogic logic;
-
+        
+        /// <summary>
+        /// конструктор презентера консоли
+        /// </summary>
+        /// <param name="consoleView">консольное представление</param>
+        /// <param name="logic">бизнес-логика</param>
         public ConsolePresenter(IConsoleView consoleView, ILogic logic)
         {
             this.consoleView = consoleView;

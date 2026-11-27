@@ -14,6 +14,12 @@ namespace Presenter
         IChangeView changeView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор презентера изменения протеза
+        /// </summary>
+        /// <param name="changeView">представление изменения протеза</param>
+        /// <param name="logic">бизнес-логика</param>
+        /// <param name="prosthesis">изменяемый протез</param>
         public ChangePresenter(IChangeView changeView, ILogic logic, ProsthesisDTO prosthesis)
         {
             this.changeView = changeView;

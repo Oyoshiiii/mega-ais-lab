@@ -13,11 +13,18 @@ namespace ViewWinForms
 {
     public partial class GroupedByBodyPartsForm : Form, IGroupedByBodyPartsView
     {
+        /// <summary>
+        /// конструктор формы отображения протезов, сгруппированных по частям тела
+        /// </summary>
         public GroupedByBodyPartsForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// метод перерисовки таблицы с сгруппированными протезами
+        /// </summary>
+        /// <param name="prostheses">лист DTO протезов для отображения</param>
         public void RedrawForm(List<ProsthesisDTO> prostheses)
         {
             prosthesesDataGridView.Rows.Clear();
@@ -29,6 +36,9 @@ namespace ViewWinForms
             }
         }
 
+        /// <summary>
+        /// метод открытия формы
+        /// </summary>
         public void ShowDialogView()
         {
             this.ShowDialog();

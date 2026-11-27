@@ -13,8 +13,14 @@ namespace ViewWinForms
 {
     public partial class SearchByIdForm : Form, ISearchByIdView
     {
+        /// <summary>
+        /// событие при нажатии кнопки поиска протеза по ID
+        /// </summary>
         public event Action<ProsthesisEventArgs> SearchBtnCLickEvent;
 
+        /// <summary>
+        /// конструктор формы поиска по ID
+        /// </summary>
         public SearchByIdForm()
         {
             InitializeComponent();
@@ -43,6 +49,10 @@ namespace ViewWinForms
             SearchBtnCLickEvent?.Invoke(new ProsthesisEventArgs(id));
         }
 
+        /// <summary>
+        /// метод отображения найденного протеза
+        /// </summary>
+        /// <param name="prosthesis">DTO найденного протеза</param>
         public void ShowFoundProsthesis(ProsthesisDTO prosthesis)
         {
             LblResult.Text =
@@ -55,11 +65,18 @@ namespace ViewWinForms
                 $"Локация/место нахождения: {prosthesis.Origin}";
         }
 
+        /// <summary>
+        /// метод отображения сообщения о том, что протез не найден
+        /// </summary>
+        /// <param name="msg">текст сообщения</param>
         public void ShowNotFoundProsthesis(string msg)
         {
             LblResult.Text = msg;
         }
 
+        /// <summary>
+        /// метод открытия формы
+        /// </summary>
         public void ShowDialogView()
         {
             this.ShowDialog();

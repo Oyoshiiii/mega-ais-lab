@@ -16,6 +16,9 @@ namespace BusinessLogic
         CRUDLogic crudLogic;
         QueryLogic queryLogic;
 
+        /// <summary>
+        /// событие при изменении данных
+        /// </summary>
         public event Action<IEnumerable<Prosthesis>> DataChanged;
 
         /// <summary>

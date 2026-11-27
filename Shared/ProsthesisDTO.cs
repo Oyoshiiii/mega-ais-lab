@@ -16,6 +16,16 @@ namespace Shared
         public string DebuffDescription { get; }
         public string Origin { get; }
 
+        /// <summary>
+        /// конструктор DTO протеза для передачи данных между слоями
+        /// </summary>
+        /// <param name="id">ID протеза</param>
+        /// <param name="modelName">название модели</param>
+        /// <param name="bodyPart">часть тела</param>
+        /// <param name="percentOfSanityLoss">% потери рассудка</param>
+        /// <param name="buffDescription">описание баффов</param>
+        /// <param name="debuffDescription">описание дебаффов</param>
+        /// <param name="origin">локация/место нахождения</param>
         public ProsthesisDTO(int id, string modelName, string bodyPart, int percentOfSanityLoss, string buffDescription, string debuffDescription, string origin)
         {
             Id = id;

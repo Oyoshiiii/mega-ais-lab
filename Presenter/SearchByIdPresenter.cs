@@ -14,6 +14,11 @@ namespace Presenter
         ISearchByIdView searchByIdView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор презентера поиска по локации протезов
+        /// </summary>
+        /// <param name="searchByIdView">представление поиска по локации протезов</param>
+        /// <param name="logic">бизнес-логика</param>
         public SearchByIdPresenter(ISearchByIdView searchByIdView, ILogic logic)
         {
             this.searchByIdView = searchByIdView;

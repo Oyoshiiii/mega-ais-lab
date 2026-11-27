@@ -14,6 +14,11 @@ namespace Presenter
         IFindByOriginView findByOriginView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор презентера поиска по локации
+        /// </summary>
+        /// <param name="findByOriginView">представление поиска по локации</param>
+        /// <param name="logic">толстая модель</param>
         public FindByOriginPresenter(IFindByOriginView findByOriginView, ILogic logic)
         {
             this.findByOriginView = findByOriginView;

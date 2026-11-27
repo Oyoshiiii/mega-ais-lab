@@ -14,6 +14,11 @@ namespace Presenter
         IAddView addView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор презентера добавления протеза
+        /// </summary>
+        /// <param name="addView">представление добавления</param>
+        /// <param name="logic">бизнес-логика</param>
         public AddPresenter(IAddView addView, ILogic logic)
         {
             this.addView = addView;

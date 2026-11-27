@@ -13,23 +13,40 @@ namespace ViewWinForms
 {
     public partial class ChangeForm : Form, IChangeView
     {
+        /// <summary>
+        /// событие при нажатии кнопки сохранения изменённых данных о протезе
+        /// </summary>
         public event Action<ProsthesisEventArgs> SaveBtnClickEvent;
 
+        /// <summary>
+        /// конструктор формы изменения протеза
+        /// </summary>
         public ChangeForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// метод закрытия формы
+        /// </summary>
         public void CloseView()
         {
             this.Close();
         }
 
+        /// <summary>
+        /// метод загрузки листа с частями тела протезов
+        /// </summary>
+        /// <param name="bodyParts">лист частей тела</param>
         public void LoadBodyPartsList(List<string> bodyParts)
         {
             CmbBodyPart.DataSource = bodyParts;
         }
 
+        /// <summary>
+        /// метод заполнения полей формы текущими данными изменяемого протеза
+        /// </summary>
+        /// <param name="prosthesis">DTO с данными изменяемого протеза</param>
         public void LoadChangedProsthesisData(ProsthesisDTO prosthesis)
         {
             TxtID.Text = prosthesis.Id.ToString();
@@ -41,10 +58,15 @@ namespace ViewWinForms
             CmbOrigin.SelectedItem = prosthesis.Origin;
         }
 
+        /// <summary>
+        /// метод загрузки листа с локациями протезов
+        /// </summary>
+        /// <param name="origin">лист локаций</param>
         public void LoadOriginList(List<string> origin)
         {
             CmbOrigin.DataSource = origin;
         }
+
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -80,6 +102,9 @@ namespace ViewWinForms
             MessageBox.Show("Изменения сохранены");
         }
 
+        /// <summary>
+        /// метод открытия формы
+        /// </summary>
         public void ShowDialogView()
         {
             this.ShowDialog();

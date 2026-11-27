@@ -14,16 +14,48 @@ namespace ViewWinForms
 {
     public partial class MainForm : Form, IMainView
     {
+        /// <summary>
+        /// событие при нажатии кнопки вывода всех протезов
+        /// </summary>
         public event Action GetAllBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии кнопки поиска протеза по ID
+        /// </summary>
         public event Action GetByIdBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии кнопки добавления протеза
+        /// </summary>
         public event Action AddBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии кнопки изменения выбранного протеза
+        /// </summary>
         public event Action<ProsthesisEventArgs> ChangeBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии кнопки удаления выбранного протеза
+        /// </summary>
         public event Action<ProsthesisEventArgs> DeleteBtnClickEvent;
+
+        /// <summary>
+        /// событие при выборе сортировки по возрастанию % потери рассудка
+        /// </summary>
         public event Action SortAscendingCheckedChangedEvent;
+        /// <summary>
+        /// событие при выборе сортировки по убыванию % потери рассудка
+        /// </summary>
         public event Action SortDescendingCheckedChangedEvent;
+
+        /// <summary>
+        /// событие при нажатии кнопки группировки по частям тела
+        /// </summary>
         public event Action GroupByBodyPartClickEvent;
+        /// <summary>
+        /// событие при нажатии кнопки поиска по локации
+        /// </summary>
         public event Action FindBuOriginBtnClickEvent;
 
+        /// <summary>
+        /// конструктор главной формы
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -84,6 +116,10 @@ namespace ViewWinForms
             FindBuOriginBtnClickEvent?.Invoke();
         }
 
+        /// <summary>
+        /// метод перерисовки таблицы с протезами
+        /// </summary>
+        /// <param name="prostheses">лист DTO протезов для отображения</param>
         public void RedrawForm(List<ProsthesisDTO> prostheses)
         {
             prosthesesDataGridView.Rows.Clear();
@@ -95,6 +131,10 @@ namespace ViewWinForms
             }
         }
 
+        /// <summary>
+        /// метод получения ID выбранного в таблице протеза
+        /// </summary>
+        /// <returns>ID выбранного протеза или -1, если ничего не выбрано</returns>
         public int GetSelectedProsthesisId()
         {
             if (prosthesesDataGridView.SelectedRows.Count == 0) return -1;
