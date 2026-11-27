@@ -12,18 +12,48 @@ namespace lab_1
         List<string> bodyParts = new List<string>();
         List<string> origin = new List<string>();
 
+        /// <summary>
+        /// событие при нажатии на пункт меню добавления протеза
+        /// </summary>
         public event Action<ProsthesisEventArgs> AddBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню вывода всех протезов
+        /// </summary>
         public event Action GetAllBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню поиска протеза по ID
+        /// </summary>
         public event Action GetByIdBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню изменения протеза
+        /// </summary>
         public event Action<ProsthesisEventArgs> ChangeBtnClickEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню удаления протеза
+        /// </summary>
         public event Action<ProsthesisEventArgs> DeleteBtnClickEvent;
 
+        /// <summary>
+        /// событие при нажатии на пункт меню группировки по частям тела
+        /// </summary>
         public event Action GroupByBodyPartClickEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню поиска по локации
+        /// </summary>
         public event Action<ProsthesisEventArgs> FindByOriginBtnClickEvent;
 
+        /// <summary>
+        /// событие при нажатии на пункт меню сортировки по возрастанию
+        /// </summary>
         public event Action SortAscendingCheckedChangedEvent;
+        /// <summary>
+        /// событие при нажатии на пункт меню сортировки по убыванию
+        /// </summary>
         public event Action SortDescendingCheckedChangedEvent;
 
+        /// <summary>
+        /// запуск основного цикла консольного приложения
+        /// </summary>
         public void ConsoleMain()
         {
             bool worked = true;
@@ -118,6 +148,9 @@ namespace lab_1
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// вывод главного меню
+        /// </summary>
         public void ShowMainMenu()
         {
             Console.Write("[1.] Вывести все протезы\n" +
@@ -134,6 +167,10 @@ namespace lab_1
 
         }
 
+        /// <summary>
+        /// получение выбора из главного меню
+        /// </summary>
+        /// <returns>номер выбранного пункта</returns>
         public int GetMainMenuChoice()
         {
             int userChoice = 0;
@@ -145,6 +182,10 @@ namespace lab_1
             return userChoice;
         }
 
+        /// <summary>
+        /// метод перерисовки консоли с выводом списка протезов
+        /// </summary>
+        /// <param name="prostheses">лист DTO протезов для отображения</param>
         public void RedrawView(List<ProsthesisDTO> prostheses)
         {
             foreach (var p in prostheses)
@@ -156,6 +197,10 @@ namespace lab_1
             }
         }
 
+        /// <summary>
+        /// вывод одного протеза
+        /// </summary>
+        /// <param name="prosthesis">DTO протеза</param>
         public void ShowProsthesis(ProsthesisDTO prosthesis)
         {
             Console.WriteLine("\n----------------------------------------------------------\n" +
@@ -164,6 +209,10 @@ namespace lab_1
                 "\n----------------------------------------------------------\n");
         }
 
+        /// <summary>
+        /// получение ID выбранного протеза (ввод в консоль)
+        /// </summary>
+        /// <returns>введенный ID протеза</returns>
         public int GetSelectedProsthesisId()
         {
             Console.Write("\nВведите ID протеза: ");
@@ -273,16 +322,28 @@ namespace lab_1
             return result;
         }
 
+        /// <summary>
+        /// загрузка списка частей тела
+        /// </summary>
+        /// <param name="bodyParts">список частей тела</param>
         public void LoadBodyPartsList(List<string> bodyParts)
         {
             this.bodyParts = bodyParts;
         }
 
+        /// <summary>
+        /// загрузка списка локаций
+        /// </summary>
+        /// <param name="origin">список локаций</param>
         public void LoadOriginList(List<string> origin)
         {
             this.origin = origin;
         }
 
+        /// <summary>
+        /// вывод сообщения в консоль
+        /// </summary>
+        /// <param name="msg">текст сообщения</param>
         public void ShowMsg(string msg)
         {
             Console.WriteLine("\n" + msg);
