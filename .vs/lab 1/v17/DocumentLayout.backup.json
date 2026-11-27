@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\consoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|solutionrelative:lab 1\\consoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\presenter\\groupedbybodypartspresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|solutionrelative:presenter\\groupedbybodypartspresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}|Shared\\Shared.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\shared\\iconsoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}|Shared\\Shared.csproj|solutionrelative:shared\\iconsoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\presenter\\consolepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|solutionrelative:presenter\\consolepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}|Shared\\Shared.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\shared\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}|Shared\\Shared.csproj|solutionrelative:shared\\imainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\presenter\\consolepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|solutionrelative:presenter\\consolepresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8D0B484-3FFB-4CC8-A246-F4CDCC8D89FD}|Shared\\Shared.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\shared\\ichangeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F05B7541-9ACD-4755-A810-801E8ECEF2D8}|lab 1\\ViewConsole.csproj|solutionrelative:lab 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\presenter\\groupedbybodypartspresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|solutionrelative:presenter\\groupedbybodypartspresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DAB0003-60D6-4094-85C7-8655007F150C}|Presenter\\Presenter.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\presenter\\findbyoriginpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,16 +39,8 @@
       "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\searchbyidform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\groupedbybodypartsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\findbyoriginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\findbyoriginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\changeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|solutionrelative:viewwinforms\\changeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91016E0A-FF8F-4C2B-B294-CC3D4382ACC7}|ViewWinForms\\ViewWinForms.csproj|c:\\users\\kesha\\desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\viewwinforms\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,67 +66,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "IMainView.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IMainView.cs",
               "RelativeDocumentMoniker": "Shared\\IMainView.cs",
               "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IMainView.cs",
               "RelativeToolTip": "Shared\\IMainView.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-26T19:28:12.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConsolePresenter.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\ConsolePresenter.cs",
-              "RelativeDocumentMoniker": "Presenter\\ConsolePresenter.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\ConsolePresenter.cs",
-              "RelativeToolTip": "Presenter\\ConsolePresenter.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCQAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T18:49:40.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IConsoleView.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IConsoleView.cs",
-              "RelativeDocumentMoniker": "Shared\\IConsoleView.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IConsoleView.cs",
-              "RelativeToolTip": "Shared\\IConsoleView.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBsAAAAhAAAAAAAAAA==",
+              "Title": "GroupedByBodyPartsForm.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
+              "RelativeDocumentMoniker": "ViewWinForms\\GroupedByBodyPartsForm.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
+              "RelativeToolTip": "ViewWinForms\\GroupedByBodyPartsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T18:58:51.113Z",
+              "WhenOpened": "2026-11-26T18:44:47.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConsoleView.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\ConsoleView.cs",
-              "RelativeDocumentMoniker": "lab 1\\ConsoleView.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\lab 1\\ConsoleView.cs",
-              "RelativeToolTip": "lab 1\\ConsoleView.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAQwFoAAAA/AAAAAAAAAA==",
+              "Title": "GroupedByBodyPartsPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\GroupedByBodyPartsPresenter.cs",
+              "RelativeDocumentMoniker": "Presenter\\GroupedByBodyPartsPresenter.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\GroupedByBodyPartsPresenter.cs",
+              "RelativeToolTip": "Presenter\\GroupedByBodyPartsPresenter.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T19:12:19.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IChangeView.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IChangeView.cs",
-              "RelativeDocumentMoniker": "Shared\\IChangeView.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IChangeView.cs",
-              "RelativeToolTip": "Shared\\IChangeView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T20:08:29.367Z",
+              "WhenOpened": "2026-11-26T18:40:14.553Z",
               "EditorCaption": ""
             },
             {
@@ -156,7 +118,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "IChangeView.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IChangeView.cs",
+              "RelativeDocumentMoniker": "Shared\\IChangeView.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Shared\\IChangeView.cs",
+              "RelativeToolTip": "Shared\\IChangeView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T20:08:29.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConsolePresenter.cs",
+              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\ConsolePresenter.cs",
+              "RelativeDocumentMoniker": "Presenter\\ConsolePresenter.cs",
+              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\ConsolePresenter.cs",
+              "RelativeToolTip": "Presenter\\ConsolePresenter.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T18:49:40.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ChangePresenter.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\ChangePresenter.cs",
               "RelativeDocumentMoniker": "Presenter\\ChangePresenter.cs",
@@ -169,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "FindByOriginPresenter.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\FindByOriginPresenter.cs",
               "RelativeDocumentMoniker": "Presenter\\FindByOriginPresenter.cs",
@@ -182,46 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GroupedByBodyPartsPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\GroupedByBodyPartsPresenter.cs",
-              "RelativeDocumentMoniker": "Presenter\\GroupedByBodyPartsPresenter.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\Presenter\\GroupedByBodyPartsPresenter.cs",
-              "RelativeToolTip": "Presenter\\GroupedByBodyPartsPresenter.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T18:40:14.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GroupedByBodyPartsForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "RelativeToolTip": "ViewWinForms\\GroupedByBodyPartsForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T18:44:47.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ChangeForm.cs",
-              "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\ChangeForm.cs",
-              "RelativeDocumentMoniker": "ViewWinForms\\ChangeForm.cs",
-              "ToolTip": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\ChangeForm.cs",
-              "RelativeToolTip": "ViewWinForms\\ChangeForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-26T18:44:19.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "SearchByIdForm.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\SearchByIdForm.cs",
               "RelativeDocumentMoniker": "ViewWinForms\\SearchByIdForm.cs",
@@ -234,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "AddForm.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\AddForm.cs",
               "RelativeDocumentMoniker": "ViewWinForms\\AddForm.cs",
@@ -247,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\MainForm.cs",
               "RelativeDocumentMoniker": "ViewWinForms\\MainForm.cs",
@@ -260,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "FindByOriginForm.cs",
               "DocumentMoniker": "C:\\Users\\kesha\\Desktop\\\u0443\u043D\u0438\u043A\\2 \u043A\u0443\u0440\u0441\\\u0430\u0438\u0441\\lab 1\\ViewWinForms\\FindByOriginForm.cs",
               "RelativeDocumentMoniker": "ViewWinForms\\FindByOriginForm.cs",
