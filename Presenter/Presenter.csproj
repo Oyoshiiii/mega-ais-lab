@@ -102,7 +102,6 @@
   <ItemGroup>
     <Compile Include="AddPresenter.cs" />
     <Compile Include="ChangePresenter.cs" />
-    <Compile Include="ConsolePresenter.cs" />
     <Compile Include="FindByOriginPresenter.cs" />
     <Compile Include="GroupedByBodyPartsPresenter.cs" />
     <Compile Include="MainPresenter.cs" />

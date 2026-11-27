@@ -17,6 +17,16 @@ namespace Shared
         public string Origin { get; }
 
         /// <summary>
+        /// пустой конструктор для отработки кнопок, которые подразумевают использование prosEA в дальнейшем,но пока не нужны
+        /// (пример: mainform и consoleview имеют общую реализацию event Action<ProsthesisEventArgs> AddBtnClickEvent
+        /// для консоли нужны данные, тк у нее 1 представление. для мейнформ еще нет, тк этим занимается открываемая им форма addform)
+        /// </summary>
+        public ProsthesisEventArgs()
+        {
+
+        }
+
+        /// <summary>
         /// Конструктор для удаления или передачи по ID
         /// </summary>
         /// <param name="id">ID уадаляемого протеза или искомого по ID</param>

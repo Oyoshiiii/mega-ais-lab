@@ -25,7 +25,7 @@ namespace ViewWinForms
         /// <summary>
         /// событие при нажатии кнопки добавления протеза
         /// </summary>
-        public event Action AddBtnClickEvent;
+        public event Action<ProsthesisEventArgs> AddBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки изменения выбранного протеза
         /// </summary>
@@ -51,7 +51,7 @@ namespace ViewWinForms
         /// <summary>
         /// событие при нажатии кнопки поиска по локации
         /// </summary>
-        public event Action FindBuOriginBtnClickEvent;
+        public event Action<ProsthesisEventArgs> FindByOriginBtnClickEvent;
 
         /// <summary>
         /// конструктор главной формы
@@ -73,7 +73,7 @@ namespace ViewWinForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            AddBtnClickEvent?.Invoke();
+            AddBtnClickEvent?.Invoke(new ProsthesisEventArgs());
         }
 
         private void ChangeBtn_Click(object sender, EventArgs e)
@@ -113,14 +113,14 @@ namespace ViewWinForms
 
         private void FindByOriginBtn_Click(object sender, EventArgs e)
         {
-            FindBuOriginBtnClickEvent?.Invoke();
+            FindByOriginBtnClickEvent?.Invoke(new ProsthesisEventArgs());
         }
 
         /// <summary>
         /// метод перерисовки таблицы с протезами
         /// </summary>
         /// <param name="prostheses">лист DTO протезов для отображения</param>
-        public void RedrawForm(List<ProsthesisDTO> prostheses)
+        public void RedrawView(List<ProsthesisDTO> prostheses)
         {
             prosthesesDataGridView.Rows.Clear();
 

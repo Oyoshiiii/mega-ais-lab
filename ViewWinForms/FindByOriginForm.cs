@@ -43,7 +43,7 @@ namespace ViewWinForms
         {
             prosthesesDataGridView.Rows.Clear();
 
-            foreach(var pros in prostheses)
+            foreach (var pros in prostheses)
             {
                 prosthesesDataGridView.Rows.Add(pros.Id, pros.ModelName, pros.BodyPart, pros.PercentOfSanityLoss,
                     pros.BuffDescription, pros.DebuffDescription, pros.Origin);

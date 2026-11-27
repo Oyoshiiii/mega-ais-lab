@@ -12,17 +12,17 @@ namespace lab_1
         List<string> bodyParts = new List<string>();
         List<string> origin = new List<string>();
 
-        public event Action<ProsthesisEventArgs> AddEvent;
-        public event Action GetAllEvent;
-        public event Action GetByIdEvent;
-        public event Action<ProsthesisEventArgs> ChangeEvent;
-        public event Action<ProsthesisEventArgs> DeleteEvent;
+        public event Action<ProsthesisEventArgs> AddBtnClickEvent;
+        public event Action GetAllBtnClickEvent;
+        public event Action GetByIdBtnClickEvent;
+        public event Action<ProsthesisEventArgs> ChangeBtnClickEvent;
+        public event Action<ProsthesisEventArgs> DeleteBtnClickEvent;
 
-        public event Action GroupByAllBodyPartsEvent;
-        public event Action<ProsthesisEventArgs> FindByOriginEvent;
+        public event Action GroupByBodyPartClickEvent;
+        public event Action<ProsthesisEventArgs> FindByOriginBtnClickEvent;
 
-        public event Action SortPercentOfSanityLossEvent;
-        public event Action SortPercentOfSanityLossDescendingEvent;
+        public event Action SortAscendingCheckedChangedEvent;
+        public event Action SortDescendingCheckedChangedEvent;
 
         public void ConsoleMain()
         {
@@ -35,11 +35,11 @@ namespace lab_1
                 switch (choice)
                 {
                     case 1:
-                        GetAllEvent?.Invoke();
+                        GetAllBtnClickEvent?.Invoke();
                         break;
 
                     case 2:
-                        GetByIdEvent?.Invoke();
+                        GetByIdBtnClickEvent?.Invoke();
                         break;
 
                     case 3:
@@ -47,23 +47,23 @@ namespace lab_1
 
                         if (addArgs != null)
                         {
-                            AddEvent?.Invoke(addArgs);
+                            AddBtnClickEvent?.Invoke(addArgs);
                         }
 
                         ShowMsg("\tПротез добавлен");
                         break;
 
                     case 4:
-                        GetAllEvent?.Invoke();
+                        GetAllBtnClickEvent?.Invoke();
 
-                        int idChange = GetSelectedIdProsthesis();
+                        int idChange = GetSelectedProsthesisId();
 
                         if (idChange != -1)
                         {
                             var changeArgs = ProsthesisDataForChange(idChange);
                             if (changeArgs != null)
                             {
-                                ChangeEvent?.Invoke(changeArgs);
+                                ChangeBtnClickEvent?.Invoke(changeArgs);
                             }
                         }
 
@@ -71,33 +71,33 @@ namespace lab_1
                         break;
 
                     case 5:
-                        GetAllEvent?.Invoke();
+                        GetAllBtnClickEvent?.Invoke();
 
-                        int idDelete = GetSelectedIdProsthesis();
+                        int idDelete = GetSelectedProsthesisId();
 
                         if (idDelete != -1)
                         {
-                            DeleteEvent?.Invoke(new ProsthesisEventArgs(idDelete));
+                            DeleteBtnClickEvent?.Invoke(new ProsthesisEventArgs(idDelete));
                         }
 
                         ShowMsg("\tПротез удален");
                         break;
 
                     case 6:
-                        GroupByAllBodyPartsEvent?.Invoke();
+                        GroupByBodyPartClickEvent?.Invoke();
                         break;
 
                     case 7:
                         string origin = ChooseOriginFromList();
-                        FindByOriginEvent?.Invoke(new ProsthesisEventArgs(origin));
+                        FindByOriginBtnClickEvent?.Invoke(new ProsthesisEventArgs(origin));
                         break;
 
                     case 8:
-                        SortPercentOfSanityLossEvent?.Invoke();
+                        SortAscendingCheckedChangedEvent?.Invoke();
                         break;
 
                     case 9:
-                        SortPercentOfSanityLossDescendingEvent?.Invoke();
+                        SortDescendingCheckedChangedEvent?.Invoke();
                         break;
 
                     case 10:
@@ -145,7 +145,7 @@ namespace lab_1
             return userChoice;
         }
 
-        public void RedrawConsole(List<ProsthesisDTO> prostheses)
+        public void RedrawView(List<ProsthesisDTO> prostheses)
         {
             foreach (var p in prostheses)
             {
@@ -164,7 +164,7 @@ namespace lab_1
                 "\n----------------------------------------------------------\n");
         }
 
-        public int GetSelectedIdProsthesis()
+        public int GetSelectedProsthesisId()
         {
             Console.Write("\nВведите ID протеза: ");
             int id = 0;

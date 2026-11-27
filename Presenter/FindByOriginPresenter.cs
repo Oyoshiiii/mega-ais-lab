@@ -41,8 +41,8 @@ namespace Presenter
                 prosthesis.ModelName,
                 prosthesis.BodyPart,
                 prosthesis.PercentOfSanityLoss,
-                prosthesis.DebuffDescription,
                 prosthesis.BuffDescription,
+                prosthesis.DebuffDescription,
                 prosthesis.Origin
             )).ToList();
 

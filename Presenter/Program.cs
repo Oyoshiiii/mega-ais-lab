@@ -44,10 +44,10 @@ namespace Presenter
                     IFindByOriginView findByOriginView = new FindByOriginForm();
                     IGroupedByBodyPartsView groupedByBodyPartsView = new GroupedByBodyPartsForm();
 
-                    mainView.AddBtnClickEvent += addView.ShowDialogView;
+                    mainView.AddBtnClickEvent += (e) => addView.ShowDialogView();
                     mainView.GetByIdBtnClickEvent += searchByIdView.ShowDialogView;
                     mainView.GroupByBodyPartClickEvent += groupedByBodyPartsView.ShowDialogView;
-                    mainView.FindBuOriginBtnClickEvent += findByOriginView.ShowDialogView;
+                    mainView.FindByOriginBtnClickEvent += (e) => findByOriginView.ShowDialogView();
 
                     mainView.ChangeBtnClickEvent += (e) =>
                     {
@@ -72,7 +72,10 @@ namespace Presenter
 
                 case 2:
                     ConsoleView consoleView = new ConsoleView();
-                    new ConsolePresenter(consoleView, logic);
+                    new MainPresenter(consoleView, logic);
+
+                    consoleView.LoadBodyPartsList(logic.GetBodyPartsList());
+                    consoleView.LoadOriginList(logic.GetOriginList());
 
                     consoleView.ConsoleMain();
                     break;

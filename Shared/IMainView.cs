@@ -19,7 +19,7 @@ namespace Shared
         /// <summary>
         /// событие при нажатии кнопки добавления протеза
         /// </summary>
-        event Action AddBtnClickEvent;
+        event Action<ProsthesisEventArgs> AddBtnClickEvent;
         /// <summary>
         /// событие при нажатии кнопки изменения протеза
         /// </summary>
@@ -45,13 +45,13 @@ namespace Shared
         /// <summary>
         /// событие при нажатии кнопки поиска протезов по определенной локации
         /// </summary>
-        event Action FindBuOriginBtnClickEvent;
+        event Action<ProsthesisEventArgs> FindByOriginBtnClickEvent;
 
         /// <summary>
         /// метод отрисовки формы с обновленными данными
         /// </summary>
         /// <param name="prostheses">лист протезов</param>
-        void RedrawForm(List<ProsthesisDTO> prostheses);
+        void RedrawView(List<ProsthesisDTO> prostheses);
         /// <summary>
         /// метод получения ID выбранного протеза в таблице
         /// </summary>

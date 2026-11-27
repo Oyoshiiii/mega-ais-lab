@@ -14,28 +14,93 @@ namespace Presenter
         IMainView mainView;
         ILogic logic;
 
+        /// <summary>
+        /// конструктор основного презентера 
+        /// </summary>
+        /// <param name="mainView">основное представление</param>
+        /// <param name="logic">бизнес логика</param>
         public MainPresenter(IMainView mainView, ILogic logic)
         {
             this.mainView = mainView;
             this.logic = logic;
 
-            mainView.GetAllBtnClickEvent += OnGetAllBtnClickEvent;
-            mainView.DeleteBtnClickEvent += OnDeleteBtnClickEvent;
+            this.mainView.GetAllBtnClickEvent += OnGetAllBtnClickEvent;
+            this.mainView.GetByIdBtnClickEvent += OnGetByIdBtnClickEvent;
+            this.mainView.AddBtnClickEvent += OnAddBtnClickEvent;
+            this.mainView.ChangeBtnClickEvent += OnChangeBtnClickEvent;
+            this.mainView.DeleteBtnClickEvent += OnDeleteBtnClickEvent;
 
-            mainView.SortAscendingCheckedChangedEvent += OnSortAscendingCheckedChangedEvent;
-            mainView.SortDescendingCheckedChangedEvent += OnSortDescendingCheckedChangedEvent;
+            this.mainView.GroupByBodyPartClickEvent += OnGroupByBodyPartClickEvent;
+            this.mainView.FindByOriginBtnClickEvent += OnFindByOriginBtnClickEvent;
+
+            this.mainView.SortAscendingCheckedChangedEvent += OnSortAscendingCheckedChangedEvent;
+            this.mainView.SortDescendingCheckedChangedEvent += OnSortDescendingCheckedChangedEvent;
 
             logic.DataChanged += OnDataChanged;
         }
 
+        private void OnGetByIdBtnClickEvent()
+        {
+            int id = mainView.GetSelectedProsthesisId();
+
+            var prosthesis = logic.GetProsthesisById(id);
+            if (prosthesis == null)
+            {
+                if (mainView is IConsoleView consView)
+                {
+                    consView.ShowMsg($"Протез с ID = {id} не найден");
+                }
+                return;
+            }
+
+            var prosDto = new ProsthesisDTO(prosthesis.Id, prosthesis.ModelName, prosthesis.BodyPart,
+                prosthesis.PercentOfSanityLoss, prosthesis.BuffDescription, prosthesis.DebuffDescription, prosthesis.Origin);
+
+            if (mainView is IConsoleView consoleView)
+            {
+                consoleView.ShowProsthesis(prosDto);
+            }
+        }
+
+        private void OnChangeBtnClickEvent(ProsthesisEventArgs args)
+        {
+            if (args != null && !string.IsNullOrEmpty(args.ModelName))
+            {
+                logic.ChangeProsthesis(args.Id, args.ModelName, args.BodyPart, args.PercentOfSanityLoss,
+                    args.BuffDescription, args.DebuffDescription, args.Origin);
+            }
+        }
+
+        private void OnFindByOriginBtnClickEvent(ProsthesisEventArgs args)
+        {
+            if (args != null && !string.IsNullOrEmpty(args.Origin))
+            {
+                mainView.RedrawView(ConvertToDTOProsthesesList(logic.GroupBySpecificOrigin(args.Origin)));
+            }
+        }
+
+        private void OnGroupByBodyPartClickEvent()
+        {
+            mainView.RedrawView(ConvertToDTOProsthesesList(logic.GroupByAllBodyParts()));
+        }
+
+        private void OnAddBtnClickEvent(ProsthesisEventArgs args)
+        {
+            if (args != null && !string.IsNullOrEmpty(args.ModelName))
+            {
+                logic.AddProsthesis(args.ModelName, args.BodyPart, args.PercentOfSanityLoss,
+                    args.BuffDescription, args.DebuffDescription, args.Origin);
+            }
+        }
+
         private void OnSortDescendingCheckedChangedEvent()
         {
-            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLossDescending()));
+            mainView.RedrawView(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLossDescending()));
         }
 
         private void OnSortAscendingCheckedChangedEvent()
         {
-            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLoss()));
+            mainView.RedrawView(ConvertToDTOProsthesesList(logic.SortByPercentOfSanityLoss()));
         }
 
         private void OnDeleteBtnClickEvent(ProsthesisEventArgs e)
@@ -45,12 +110,12 @@ namespace Presenter
 
         private void OnGetAllBtnClickEvent()
         {
-            mainView.RedrawForm(ConvertToDTOProsthesesList(logic.GetAllProstheses()));
+            mainView.RedrawView(ConvertToDTOProsthesesList(logic.GetAllProstheses()));
         }
 
         private void OnDataChanged(IEnumerable<Prosthesis> prostheses)
         {
-            mainView.RedrawForm(ConvertToDTOProsthesesList(prostheses.ToList()));
+            mainView.RedrawView(ConvertToDTOProsthesesList(prostheses.ToList()));
         }
 
 
@@ -61,8 +126,8 @@ namespace Presenter
                 prosthesis.ModelName,
                 prosthesis.BodyPart,
                 prosthesis.PercentOfSanityLoss,
-                prosthesis.DebuffDescription,
                 prosthesis.BuffDescription,
+                prosthesis.DebuffDescription,
                 prosthesis.Origin
             )).ToList();
 
